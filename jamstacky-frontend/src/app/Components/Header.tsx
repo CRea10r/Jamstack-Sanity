@@ -40,7 +40,7 @@ export default async function Header() {
             </Link>
           ))}
           <button className="bg-[#222549] hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full">
-            <span className='text-xl'>⚡Let's chat</span>
+            <span className='text-xl'>⚡Lets chat</span>
           </button>
         </div>
 
@@ -66,7 +66,7 @@ export default async function Header() {
                   </Link>
                 ))}
                 <button className="bg-[#222549] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-4">
-                  <span className='text-lg'>⚡Let's chat</span>
+                  <span className='text-lg'>⚡Lets chat</span>
                 </button>
               </nav>
             </SheetContent>
