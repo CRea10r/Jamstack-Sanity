@@ -5,11 +5,11 @@ import { urlFor } from '@/app/utils/imageUtils';
 
 export default function Hero({ data }: { data: { sectionContent: HeroSection[] } }) {
   return (
-    <div className="w-full bg-pink-50 min-h-screen flex items-center">
+    <div className="w-full bg-pink-50 flex items-center justify-center py-12 px-6 lg:px-12">
       {data.sectionContent?.map((heroSection, index) => (
         <div
           key={index}
-          className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20 py-12 px-6 lg:px-12"
+          className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20"
         >
           <div className="space-y-8 text-[#110462]">
             {heroSection?.title && (
@@ -37,13 +37,13 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
           </div>
 
           {heroSection?.heroImage?.asset && (
-            <div className="hidden lg:flex justify-center items-center h-full">
-              <div className="relative w-full sm:w-96 md:w-[500px] lg:w-[600px] h-80 sm:h-96 md:h-[500px] lg:h-[600px] flex items-center justify-center">
+            <div className="hidden lg:flex justify-center items-center w-full">
+              <div className="relative w-full sm:w-96 md:w-[500px] lg:w-[600px] flex items-center justify-center">
                 <Image
                   src={urlFor(heroSection.heroImage.asset)}
                   alt="Hero Section Image"
-                  width={400}
-                  height={400}
+                  width={600}  
+                  height={400} 
                   className="object-cover"
                   priority
                   loading="eager"
