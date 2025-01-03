@@ -4,7 +4,7 @@ import { customComponents } from '@/app/Components/CustomComponent';
 import Image from 'next/image';
 import { HeroSection } from '@/app/sanity/types/sectionTypes/heroSection';
 import { urlFor } from '@/app/utils/imageUtils';
-import { Section } from '@/app/sanity/types/pageType';
+
 
 export default function Hero({ data }: { data: { sectionContent: HeroSection[]}}) {
   return (

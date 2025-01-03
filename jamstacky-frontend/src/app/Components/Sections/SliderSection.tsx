@@ -1,6 +1,5 @@
 "use client"
 import { SliderSection } from '@/app/sanity/types/sectionTypes/sliderSection';
-import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { urlFor } from '@/app/utils/imageUtils'
 import '@/app/globals.css'

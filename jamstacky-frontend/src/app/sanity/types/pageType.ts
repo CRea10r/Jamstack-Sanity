@@ -8,6 +8,11 @@ import { BlogSection } from "./sectionTypes/blogSection";
 import { SliderSection } from "./sectionTypes/sliderSection";
 import { ContactSection } from "./sectionTypes/contactSection";
 
+export interface MarkDef {
+  _key: string;
+  _type: string;
+  href?: string;
+}
 export interface content {
   _key: string;
   _type: 'block';
@@ -17,7 +22,7 @@ export interface content {
     text: string;
     marks: string[];
   }>;
-  markDefs: any[];
+  markDefs: MarkDef[]; 
   style: string;
 }
 

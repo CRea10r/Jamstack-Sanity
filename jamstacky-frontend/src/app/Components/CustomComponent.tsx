@@ -2,11 +2,12 @@ import React from "react";
 import { PortableTextReactComponents } from "@portabletext/react";
 import { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { urlFor } from "../utils/imageUtils";
+import Image from "next/image";
 
 export const customComponents: Partial<PortableTextReactComponents> = {
   types: {
     image: ({ value }: { value: { asset: SanityImageSource; alt?: string } }) => (
-      <img
+      <Image
         src={urlFor(value.asset)}
         alt={value.alt || "Sanity Image"}
         className="my-4 rounded-lg"
