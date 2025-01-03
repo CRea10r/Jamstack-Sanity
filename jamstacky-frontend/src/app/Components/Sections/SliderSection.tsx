@@ -24,6 +24,7 @@ export default function InfiniteSlider({ data }: { data: { sectionContent: Slide
                                 key={idx}
                                 width={400}
                                 height={400}
+                                loading='lazy'
                                 src={urlFor(image.asset)}
                                 alt={`Image ${idx + 1}`}
                                 className="object-cover"

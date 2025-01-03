@@ -6,9 +6,22 @@ export default defineType({
     type:'object',
     fields: [
         defineField({
-            name: 'content',
-            title: 'Content',
-            type: 'blockContent',
+            name: 'title',
+            title: 'Title',
+            type: 'string',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'description',
+            title: 'Description',
+            type: 'string',
+            validation: (Rule) => Rule.required(),
+        }),
+        defineField({
+            name: 'logo',
+            title: 'Logo',
+            type: 'image',
+            validation: (Rule) => Rule.required(),
         }),
         defineField({
             name: 'button',

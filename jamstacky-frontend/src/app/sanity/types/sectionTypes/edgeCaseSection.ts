@@ -2,6 +2,7 @@ import { content } from "../pageType";
 
 export interface EdgeCaseSection {
     _type: 'edgeCaseSection';
+    sectionHeading: string;
     title: string;
     content: content[];
     edgeCaseImage: {

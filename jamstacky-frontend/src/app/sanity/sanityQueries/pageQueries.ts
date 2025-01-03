@@ -11,19 +11,24 @@ export const PAGE_QUERY = defineQuery(`
         ...,
         _type == "heroSection" => {
           _type,
-          content,
+          title,
+          description,
+          logo,
           button,
           heroImage,
           info,
         },
         _type == "caseStudySection" => {
           _type,
+          sectionHeading,
           title,
-          content,
+          contentTitle,
+          contentContext,
           caseStudyImage
         },
         _type == "technologySection" => {
           _type,
+          sectionHeading,
           fieldContent {
             fieldName,
             technologies[] {
@@ -50,6 +55,7 @@ export const PAGE_QUERY = defineQuery(`
         },
         _type == "edgeCaseSection" => {
           _type,
+          sectionHeading,
           title,
           content,
           edgeCaseImage,

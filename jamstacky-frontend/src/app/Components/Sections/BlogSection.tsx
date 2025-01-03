@@ -9,7 +9,7 @@ export default function Blogs({ data }: { data: { sectionContent: BlogSection[] 
                 <div key={index}>
 
                     {blogSection.sectionHeading && (
-                        <h1 className="text-xl font-semibold text-blue-600 mb-2">{blogSection.sectionHeading}</h1>
+                        <h1 className="text-xl font-semibold text-blue-600 mb-2">--{blogSection.sectionHeading}--</h1>
                     )}
                  
                     {blogSection.title && (

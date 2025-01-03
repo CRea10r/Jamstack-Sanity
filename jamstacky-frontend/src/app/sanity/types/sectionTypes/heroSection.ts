@@ -1,13 +1,18 @@
-import { content } from "../pageType";
-
 export interface HeroSection {
-    _type: "heroSection";
-    content?: content[];
-    button?: string[];
-    heroImage?: {
-      asset: {
-        url: string;
-      };
+  _type: "heroSection";
+  title: string;
+  description: string;
+  logo: {
+    asset: {
+      _id: string;
+      url: string;
     };
-    info?: string;
+  };
+  button?: string[];
+  heroImage?: {
+    asset: {
+      url: string;
+    };
+  };
+  info?: string;
 }

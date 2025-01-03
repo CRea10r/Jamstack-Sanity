@@ -1,6 +1,7 @@
 export interface TechnologySection {
     title?: string; 
     _type: "technologySection";
+    sectionHeading: string;
     fieldContent: {
       fieldName: string;
       technologies: {

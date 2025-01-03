@@ -6,17 +6,15 @@ import { urlFor } from '@/app/utils/imageUtils';
 export default function Technology({ data }: { data: { sectionContent: TechnologySection[] } }) {
   return (
     <div className="container mx-auto px-4 py-8">
-      <h2 className="text-xl font-bold mb-8">
-        TECHNOLOGY WE WORK WITH
-      </h2>
 
       {data.sectionContent?.map((technologySection, index) => (
         <div key={index} className="mb-12">
           
-          {technologySection?.title && (
-            <h3 className="text-2xl font-bold text-center mb-8">
-              {technologySection.title}
-            </h3>
+          {technologySection.sectionHeading && (
+            <h1 className="text-xl font-semibold text-blue-600 mb-2">--{technologySection.sectionHeading}--</h1>
+          )}
+          {technologySection?.fieldContent?.fieldName && (
+            <h1 className="text-3xl font-medium mb-2">{technologySection.fieldContent.fieldName}</h1>
           )}
 
           
@@ -36,9 +34,8 @@ export default function Technology({ data }: { data: { sectionContent: Technolog
                         src={urlFor(img.asset)}
                         alt={technology.fieldContentType || "Technology"}
                         loading="lazy"
-                        width={96}
-                        height={96}
-                        className="w-24 h-24"
+                        width={200}
+                        height={200}
                       />
                     </div>
                   ))}

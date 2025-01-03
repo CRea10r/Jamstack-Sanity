@@ -2,7 +2,9 @@ import { content } from "../pageType";
 
 export interface CaseStudySection {
     _type: "caseStudySection";
-    content?: content[];
+    sectionHeading: string; 
+    contentTitle: string;
+    contentContext?: content[];
     caseStudyImage?: {
       asset: {
         url: string;
