@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { FooterData } from "../sanity/types/footerType";
-import { client } from "../sanity/lib/sanityClient";
-import { FOOTER_QUERY } from "../sanity/sanityQueries/footerQueries";
+import { FooterData } from "@/app/sanity/types/footerType";
+import { client } from "@/app/sanity/lib/sanityClient";
+import { FOOTER_QUERY } from "@/app/sanity/sanityQueries/footerQueries";
 import Link from "next/link";
 
 export default async function Footer() {

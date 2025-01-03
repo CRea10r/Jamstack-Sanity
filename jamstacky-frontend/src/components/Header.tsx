@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { HEADER_QUERY } from '../sanity/sanityQueries/headerQueries';
-import { client } from '../sanity/lib/sanityClient';
-import { HeaderData } from '../sanity/types/headerType';
+import { HEADER_QUERY } from '@/app/sanity/sanityQueries/headerQueries';
+import { client } from '@/app/sanity/lib/sanityClient';
+import { HeaderData } from '@/app/sanity/types/headerType';
 import Image from 'next/image';
 import {
   Sheet,
