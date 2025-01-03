@@ -6,17 +6,17 @@ import { urlFor } from '@/app/utils/imageUtils';
 
 
 export default function CaseStudy({ data }: { data: { sectionContent: CaseStudySection[] } }) {
-
   return (
     <div className="rounded-lg p-6 py-8 container mx-auto min-h-screen flex items-center">
       {data.sectionContent?.map((caseStudySection, index) => (
-        <div key={index} className="space-y-8">
+        <div key={index} className="space-y-8 w-full">
           {caseStudySection.sectionHeading && (
-            <h1 className="text-xl font-semibold text-blue-600 mb-2">--{caseStudySection.sectionHeading}--</h1>
+            <h1 className="text-lg md:text-xl font-semibold text-blue-600 mb-2">--{caseStudySection.sectionHeading}--</h1>
           )}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-
-            <div className="md:order-2 space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            
+            {/* Content Section - Ensuring it takes full height */}
+            <div className="md:order-2 flex flex-col justify-center space-y-6 min-h-full">
               {caseStudySection?.contentTitle && (
                 <h3 className="text-2xl font-bold">{caseStudySection.contentTitle}</h3>
               )}
@@ -25,12 +25,10 @@ export default function CaseStudy({ data }: { data: { sectionContent: CaseStudyS
               )}
             </div>
 
-            <div className="md:order-1 flex flex-col justify-center items-center md:items-start space-y-4">
-
+            {/* Image Section */}
+            <div className="md:order-1 flex flex-col justify-center items-center md:items-start space-y-4 min-h-full">
               {caseStudySection?.title && (
-                <h2 className="text-3xl font-medium mb-2">
-                  {caseStudySection.title}
-                </h2>
+                <h2 className="text-3xl font-medium mb-2">{caseStudySection.title}</h2>
               )}
 
               {caseStudySection?.caseStudyImage?.asset && (
@@ -44,7 +42,7 @@ export default function CaseStudy({ data }: { data: { sectionContent: CaseStudyS
                 </div>
               )}
 
-              <div className=" p-4 rounded-lg">
+              <div className="p-4 rounded-lg">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">VOLZ - Core Web Vitals Assessment</h2>
                 <div className="mb-4">
                   <h3 className="text-lg font-medium text-gray-700 mb-1">First contentful paint</h3>
@@ -81,3 +79,4 @@ export default function CaseStudy({ data }: { data: { sectionContent: CaseStudyS
     </div>
   );
 }
+

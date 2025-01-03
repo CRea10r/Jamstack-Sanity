@@ -9,7 +9,7 @@ export default function Blogs({ data }: { data: { sectionContent: BlogSection[] 
                 <div key={index}>
 
                     {blogSection.sectionHeading && (
-                        <h1 className="text-xl font-semibold text-blue-600 mb-2">--{blogSection.sectionHeading}--</h1>
+                        <h1 className="text-lg md:text-xl font-semibold text-blue-600 mb-2">--{blogSection.sectionHeading}--</h1>
                     )}
                  
                     {blogSection.title && (
@@ -24,6 +24,7 @@ export default function Blogs({ data }: { data: { sectionContent: BlogSection[] 
                                         src={urlFor(blogSection.content[contentIndex].contentImage.asset)}
                                         width={500}
                                         height={500}
+                                        priority
                                         alt="Hero Section Image"
                                         style={{ objectFit: 'cover' }}
                                     />

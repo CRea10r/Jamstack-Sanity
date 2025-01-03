@@ -26,7 +26,7 @@ export default function Compare({ data }: { data: { sectionContent: CompareSecti
           <div key={index} className="mb-8">
             <div className='bg-[#da3654] px-4 py-8 rounded-md'>
               <h2 className="text-2xl font-bold mb-4 text-white">{section?.title}</h2>
-              <p className="text-gray-700 mb-8 text-white">{section?.description}</p>
+              <p className=" mb-8 text-white">{section?.description}</p>
             </div>
 
             <div className='bg-custom-gradient rounded-md'>

@@ -5,11 +5,11 @@ import { urlFor } from '@/app/utils/imageUtils';
 
 export default function Hero({ data }: { data: { sectionContent: HeroSection[] } }) {
   return (
-    <div className="mx-auto container px-6 lg:px-12 py-12 min-h-screen">
+    <div className="w-full bg-pink-50 min-h-screen flex items-center">
       {data.sectionContent?.map((heroSection, index) => (
         <div
           key={index}
-          className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20 min-h-[80vh] py-12"
+          className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20 py-12 px-6 lg:px-12"
         >
           {/* Content Section */}
           <div className="space-y-8 text-[#110462]">
@@ -25,14 +25,12 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
               </p>
             )}
 
-            {/* Buttons */}
+            {/* Buttons Section */}
             <div className="mt-8 flex flex-wrap gap-4">
               {heroSection?.button?.map((btnText, btnIndex) => (
                 <button
                   key={btnIndex}
-                  className={`rounded-full px-6 py-3 text-lg md:text-xl font-semibold text-white shadow-lg transition-transform transform hover:scale-105 ${
-                    btnIndex === 0 ? 'bg-[#222549]' : 'bg-[rgba(216,34,68,0.85)]'
-                  }`}
+                  className={`rounded-full px-6 py-3 text-lg md:text-xl font-semibold text-white shadow-lg transition-transform transform hover:scale-105 ${btnIndex === 0 ? 'bg-[#222549]' : 'bg-[rgba(216,34,68,0.85)]'}`}
                 >
                   {btnText}
                 </button>
@@ -43,18 +41,22 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
           {/* Hero Image Section */}
           {heroSection?.heroImage?.asset && (
             <div className="flex justify-center items-center">
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96 lg:w-[500px] lg:h-[500px]">
+              <div className="relative w-full sm:w-96 md:w-[500px] lg:w-[600px] h-80 sm:h-96 md:h-[500px] lg:h-[600px]">
                 <Image
                   src={urlFor(heroSection.heroImage.asset)}
                   alt="Hero Section Image"
-                  fill
+                  width={600}
+                  height={600}
+                  layout="responsive"  // Ensure responsive aspect ratio
                   className="rounded-lg object-cover"
+                  priority
+                  loading="eager"  // Ensures that the image is loaded eagerly
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" // Responsive image sizes
                 />
               </div>
             </div>
           )}
         </div>
-
       ))}
     </div>
   );

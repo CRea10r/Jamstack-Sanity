@@ -11,7 +11,7 @@ export default function Technology({ data }: { data: { sectionContent: Technolog
         <div key={index} className="mb-12">
           
           {technologySection.sectionHeading && (
-            <h1 className="text-xl font-semibold text-blue-600 mb-2">--{technologySection.sectionHeading}--</h1>
+            <h1 className="text-lg md:text-xl font-semibold text-blue-600 mb-2">--{technologySection.sectionHeading}--</h1>
           )}
           {technologySection?.fieldContent?.fieldName && (
             <h1 className="text-3xl font-medium mb-2">{technologySection.fieldContent.fieldName}</h1>
