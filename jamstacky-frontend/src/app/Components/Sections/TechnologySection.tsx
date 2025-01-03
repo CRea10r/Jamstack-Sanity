@@ -35,6 +35,7 @@ export default function Technology({ data }: { data: { sectionContent: Technolog
                       <Image
                         src={urlFor(img.asset)}
                         alt={technology.fieldContentType || "Technology"}
+                        loading="lazy"
                         width={96}
                         height={96}
                         className="w-24 h-24"
