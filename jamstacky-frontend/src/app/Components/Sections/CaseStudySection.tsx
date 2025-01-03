@@ -15,7 +15,7 @@ export default function CaseStudy({ data }: { data: { sectionContent: CaseStudyS
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             
-            {/* Content Section - Ensuring it takes full height */}
+           
             <div className="md:order-2 flex flex-col justify-center space-y-6 min-h-full">
               {caseStudySection?.contentTitle && (
                 <h3 className="text-2xl font-bold">{caseStudySection.contentTitle}</h3>
@@ -25,7 +25,7 @@ export default function CaseStudy({ data }: { data: { sectionContent: CaseStudyS
               )}
             </div>
 
-            {/* Image Section */}
+         
             <div className="md:order-1 flex flex-col justify-center items-center md:items-start space-y-4 min-h-full">
               {caseStudySection?.title && (
                 <h2 className="text-3xl font-medium mb-2">{caseStudySection.title}</h2>

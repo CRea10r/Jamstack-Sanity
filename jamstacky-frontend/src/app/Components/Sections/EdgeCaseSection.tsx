@@ -11,7 +11,7 @@ export default function EdgeCase({ data }: { data: { sectionContent: EdgeCaseSec
       <div className="container mx-auto">
         {data?.sectionContent?.map((edgeCase, index) => (
           <div key={index} className="relative">
-            {/* Section Heading stays on top left */}
+        
             {edgeCase.sectionHeading && (
               <h1 className="absolute -top-10 left-0 text-lg md:text-xl font-semibold text-blue-600 mb-10">
                 --{edgeCase.sectionHeading}--

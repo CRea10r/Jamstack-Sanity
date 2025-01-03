@@ -11,7 +11,7 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
           key={index}
           className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20 py-12 px-6 lg:px-12"
         >
-          {/* Content Section */}
+        
           <div className="space-y-8 text-[#110462]">
             {heroSection?.title && (
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
@@ -25,7 +25,7 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
               </p>
             )}
 
-            {/* Buttons Section */}
+
             <div className="mt-8 flex flex-wrap gap-4">
               {heroSection?.button?.map((btnText, btnIndex) => (
                 <button
@@ -38,7 +38,7 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
             </div>
           </div>
 
-          {/* Hero Image Section */}
+
           {heroSection?.heroImage?.asset && (
             <div className="flex justify-center items-center">
               <div className="relative w-full sm:w-96 md:w-[500px] lg:w-[600px] h-80 sm:h-96 md:h-[500px] lg:h-[600px]">
@@ -47,11 +47,10 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
                   alt="Hero Section Image"
                   width={600}
                   height={600}
-                  layout="responsive"  // Ensure responsive aspect ratio
+                  layout="responsive"  
                   className="rounded-lg object-cover"
-                  priority
-                  loading="eager"  // Ensures that the image is loaded eagerly
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" // Responsive image sizes
+                  loading="eager"  
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
               </div>
             </div>
