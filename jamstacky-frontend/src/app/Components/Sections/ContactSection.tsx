@@ -6,10 +6,10 @@ import Link from "next/link";
 export default function Contact({ data }: { data: { sectionContent: ContactSection[] } }) {
   return (
     <div className="flex flex-col items-center justify-center px-6 py-12">
-      
+
       {data.sectionContent?.map((contactSection, index) => (
         <div key={index} className="flex flex-col md:flex-row items-center gap-5 w-full max-w-4xl">
-          
+
           <div className="max-w-lg text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4">
               {contactSection.title}
@@ -18,7 +18,7 @@ export default function Contact({ data }: { data: { sectionContent: ContactSecti
               {contactSection.description}
             </p>
           </div>
-        
+
           <div className="flex flex-col items-center md:items-start mt-8 md:mt-0">
             <div className="flex items-center space-x-2 mb-4">
               {contactSection.contactAvtar?.asset?.url ? (
@@ -44,7 +44,10 @@ export default function Contact({ data }: { data: { sectionContent: ContactSecti
             </Link>
             <p className="mt-4 text-gray-500">
               {contactSection.contactText}{" "}
-              <Link href={`mailto:${contactSection.contactEmail}`} className="text-red-500 underline">
+              <Link
+                href={`mailto:${contactSection.contactEmail}`}
+                className="text-[#da3654] underline hover:text-[#222549] duration-300 transition"
+              >
                 {contactSection.contactEmail}
               </Link>
             </p>

@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
 
   return (
     <div
-      className="w-full bg-pink-50 flex items-center justify-center py-12 px-6 lg:px-12"
+      className="w-full flex items-center justify-center py-12 px-6 lg:px-12"
       style={{ minHeight: "500px" }} // Reserved height
     >
       {data.sectionContent.map((heroSection, index) => (
@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               )}
 
               {heroSection?.description && (
-                <p className="text-lg md:text-xl">{heroSection.description}</p>
+                <p className="text-lg md:text-xl font-serif">{heroSection.description}</p>
               )}
 
               {heroSection?.button?.length ? (
@@ -61,8 +61,8 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                   <Image
                     src={urlFor(heroSection.heroImage.asset)}
                     alt={heroSection?.title || "Hero Section Image"}
-                    width={600} // Explicit width to avoid layout shifts
-                    height={400} // Explicit height to avoid layout shifts
+                    width={640} // Explicit width to avoid layout shifts
+                    height={658} // Explicit height to avoid layout shifts
                     layout="intrinsic" // Ensures proper aspect ratio
                     priority // Ensures image is loaded early
                     loading="eager" // Eager loading for critical images
