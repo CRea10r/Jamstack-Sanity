@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               )}
 
               {heroSection?.description && (
-                <p className="text-lg md:text-xl">{heroSection.description}</p>
+                <h2 className="text-lg md:text-xl">{heroSection.description}</h2>
               )}
 
               {heroSection?.button?.length ? (
