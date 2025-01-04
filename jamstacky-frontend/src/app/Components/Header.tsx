@@ -22,9 +22,11 @@ export default async function Header() {
         <Link href="/">
           <Image
             width={200}
-            height={500}
+            height={50} // Adjusted height for a consistent aspect ratio
             src={headerData.logoImage?.asset?.url || '/logo.svg'}
             alt="Jamstacky Logo"
+            layout="intrinsic" // Helps with responsive image handling and avoids layout shifts
+            priority // Make sure the logo image is loaded as soon as possible
           />
         </Link>
 
