@@ -5,7 +5,7 @@ import { urlFor } from '@/utils/imageUtils';
 
 export default function Technology({ data }: { data: { sectionContent: TechnologySection[] } }) {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="py-4 px-2 sm:px-6 lg:px-[15%]">
 
       {data.sectionContent?.map((technologySection, index) => (
         <div key={index} className="mb-12">
@@ -14,7 +14,7 @@ export default function Technology({ data }: { data: { sectionContent: Technolog
             <h1 className="text-lg md:text-xl font-semibold text-blue-600 mb-2">--{technologySection.sectionHeading}--</h1>
           )}
           {technologySection?.fieldContent?.fieldName && (
-            <h1 className="text-3xl font-medium mb-2">{technologySection.fieldContent.fieldName}</h1>
+            <h1 className="text-3xl font-medium mb-8">{technologySection.fieldContent.fieldName}</h1>
           )}
 
           

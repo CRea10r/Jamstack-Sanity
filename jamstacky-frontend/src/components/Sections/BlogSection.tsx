@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Blogs({ data }: { data: { sectionContent: BlogSection[] } }) {
     return (
-        <div className="container mx-auto px-4 py-12">
+        <div className="py-4 px-2 sm:px-6 lg:px-[15%]">
             {data.sectionContent?.map((blogSection, index) => (
                 <div key={index}>
 

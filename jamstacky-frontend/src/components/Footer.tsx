@@ -9,7 +9,7 @@ export default async function Footer() {
 
   return (
     <footer className="bg-[#222549] text-white py-6">
-      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+      <div className="py-4 px-2 sm:px-6 lg:px-[10%] flex flex-col md:flex-row items-center justify-between">
         
         <div className="flex items-center mb-4 md:mb-0">
           {footerData.footerLogo && (

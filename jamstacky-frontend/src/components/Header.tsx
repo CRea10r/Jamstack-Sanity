@@ -17,7 +17,7 @@ export default async function Header() {
 
   return (
     <header className="py-4">
-      <div className="container mx-auto flex justify-between items-center">
+      <div className="py-4 px-2 sm:px-6 lg:px-[15%] flex justify-between items-center">
         {/* Logo Section */}
         <Link href="/">
           <Image
@@ -31,7 +31,7 @@ export default async function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-4 py-5">
           {headerData.navigationItems?.map((item, index) => (
             <Link key={index} href={item.link} className="text-gray-600 hover:text-gray-800 text-lg">
               {item.label}
@@ -43,7 +43,7 @@ export default async function Header() {
         </div>
 
         {/* Mobile Menu - Sheet */}
-        <div className="sm:hidden">
+        <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <button className="bg-[#222549] text-white py-2 px-4 rounded-md">

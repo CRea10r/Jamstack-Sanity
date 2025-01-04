@@ -13,18 +13,15 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
   }
 
   return (
-    <div
-      className="w-full flex items-center justify-center py-12 px-6 lg:px-12"
-      style={{ minHeight: "500px" }} // Reserved height
-    >
+    <div>
       {data.sectionContent.map((heroSection, index) => (
         <div
           key={index}
-          className="container mx-auto py-8 px-6 lg:px-12 flex items-center justify-center"
+          className="py-8 px-2 sm:px-6 lg:px-[15%] flex items-center justify-center"
           style={{ minHeight: "400px" }} // Reserve height to avoid layout shifts
         >
           {/* Text Section */}
-          <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
             <div className="space-y-8 text-[#110462]">
               {heroSection?.title && (
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold">
