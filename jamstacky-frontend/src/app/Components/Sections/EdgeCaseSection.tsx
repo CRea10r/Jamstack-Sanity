@@ -29,7 +29,7 @@ export default function EdgeCase({ data }: { data: { sectionContent: EdgeCaseSec
                     className="object-cover animate-spin-slow"
                   />
 
-                  <div className="absolute top-1/2 lg:left-[16rem] md:left-[11rem] left-[8rem] transform -translate-x-1/2 -translate-y-1/2">
+                  <div className="absolute top-1/2 lg:left-[16rem] md:left-[12rem] sm:left-[14rem] left-[10rem] transform -translate-x-1/2 -translate-y-1/2">
                     <Image
                       src={urlFor(edgeCase?.edgeCaseLogo?.asset)}
                       width={70}

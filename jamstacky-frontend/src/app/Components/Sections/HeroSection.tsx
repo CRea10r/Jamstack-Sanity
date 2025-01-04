@@ -28,7 +28,7 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
               {heroSection?.button?.map((btnText, btnIndex) => (
                 <button
                   key={btnIndex}
-                  className={`rounded-full px-6 py-3 text-lg md:text-xl font-semibold text-white shadow-lg transition-transform transform hover:scale-105 ${btnIndex === 0 ? 'bg-[#222549]' : 'bg-[rgba(216,34,68,0.85)]'}`}
+                  className={`rounded-full px-6 py-3 text-lg md:text-xl font-semibold text-white transition-transform transform hover:scale-105 ${btnIndex === 0 ? 'bg-[#222549]' : 'bg-[rgba(216,34,68,0.85)]'}`}
                 >
                   {btnText}
                 </button>
@@ -57,3 +57,5 @@ export default function Hero({ data }: { data: { sectionContent: HeroSection[] }
     </div>
   );
 }
+
+

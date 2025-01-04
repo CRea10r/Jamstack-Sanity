@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ContactSection } from "@/app/sanity/types/sectionTypes/contactSection";
 import { urlFor } from "@/app/utils/imageUtils";
+import Link from "next/link";
 
 export default function Contact({ data }: { data: { sectionContent: ContactSection[] } }) {
   return (
@@ -35,17 +36,17 @@ export default function Contact({ data }: { data: { sectionContent: ContactSecti
                 </div>
               )}
             </div>
-            <a
+            <Link
               href="#"
               className="bg-[#222549] text-white py-3 px-6 rounded-lg font-semibold hover:bg-[#da3654] transition"
             >
               {`⚡${contactSection.buttonText}`}
-            </a>
+            </Link>
             <p className="mt-4 text-gray-500">
               {contactSection.contactText}{" "}
-              <a href={`mailto:${contactSection.contactEmail}`} className="text-red-500 underline">
+              <Link href={`mailto:${contactSection.contactEmail}`} className="text-red-500 underline">
                 {contactSection.contactEmail}
-              </a>
+              </Link>
             </p>
           </div>
         </div>

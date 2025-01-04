@@ -20,27 +20,23 @@ export default async function Header() {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo Section */}
         <Link href="/">
-          <div className="flex items-center">
-            <Image
-              width={200}
-              height={500}
-              src={headerData.logoImage?.asset?.url || '/logo.svg'}
-              alt="Jamstacky Logo"
-            />
-          </div>
+          <Image
+            width={200}
+            height={500}
+            src={headerData.logoImage?.asset?.url || '/logo.svg'}
+            alt="Jamstacky Logo"
+          />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden sm:flex items-center gap-8">
+        <div className="hidden sm:flex items-center gap-4">
           {headerData.navigationItems?.map((item, index) => (
-            <Link key={index} href={item.link}>
-              <div className="text-gray-600 hover:text-gray-800 font-medium text-2xl">
-                {item.label}
-              </div>
+            <Link key={index} href={item.link} className="text-gray-600 hover:text-gray-800 text-lg">
+              {item.label}
             </Link>
           ))}
-          <button className="bg-[#222549] hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full">
-            <span className='text-xl'>⚡Lets chat</span>
+          <button className="bg-[#222549] text-white py-2 px-4 rounded-md">
+            ⚡Lets chat
           </button>
         </div>
 
@@ -48,7 +44,7 @@ export default async function Header() {
         <div className="sm:hidden">
           <Sheet>
             <SheetTrigger asChild>
-              <button className="bg-[#222549] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">
+              <button className="bg-[#222549] text-white py-2 px-4 rounded-md">
                 ☰
               </button>
             </SheetTrigger>
@@ -57,16 +53,14 @@ export default async function Header() {
                 <SheetTitle>Menu</SheetTitle>
                 <SheetDescription>Navigate through the sections</SheetDescription>
               </SheetHeader>
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col gap-2">
                 {headerData.navigationItems?.map((item, index) => (
-                  <Link key={index} href={item.link}>
-                    <div className="text-gray-600 hover:text-gray-800 font-medium text-lg">
-                      {item.label}
-                    </div>
+                  <Link key={index} href={item.link} className="text-gray-600 hover:text-gray-800 text-lg">
+                    {item.label}
                   </Link>
                 ))}
-                <button className="bg-[#222549] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md mt-4">
-                  <span className='text-lg'>⚡Lets chat</span>
+                <button className="bg-[#222549] text-white py-2 px-4 rounded-md mt-2">
+                  ⚡Lets chat
                 </button>
               </nav>
             </SheetContent>

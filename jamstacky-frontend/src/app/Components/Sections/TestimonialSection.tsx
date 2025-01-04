@@ -51,7 +51,7 @@ export default function Testimonial({ data }: {data: { sectionContent: Testimoni
                   <CarouselItem key={index}>
                     <div className="p-4">
                       <Card>
-                        <CardContent className="flex flex-col p-6 space-y-6 md:space-y-0">
+                        <CardContent className="flex flex-col p-0 sm:p-6 space-y-6 md:space-y-0">
                           
                           <div className="w-3/4 flex justify-center ">
                             <PortableText

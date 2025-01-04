@@ -25,7 +25,7 @@ const ContactSection = dynamic(() => import("./Components/Sections/ContactSectio
 export default async function Home() {
   const homePage = await client.fetch(PAGE_QUERY, { slug: 'home' });
   return (
-    <div>
+    <>
       {homePage.sectionsList.map((sectionItem: Section, sectionIndex: number) => {
         switch (sectionItem.type) {
           case "heroSection":
@@ -51,6 +51,6 @@ export default async function Home() {
             return null;
         }
       })}
-    </div>
+    </>
   );
 }
