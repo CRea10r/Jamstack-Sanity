@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
               )}
 
               {heroSection?.description && (
-                <p className="text-lg md:text-xl font-serif">{heroSection.description}</p>
+                <p className="text-lg md:text-xl">{heroSection.description}</p>
               )}
 
               {heroSection?.button?.length ? (
@@ -44,8 +44,7 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                       className={`rounded-full px-6 py-3 text-lg md:text-xl font-semibold text-white transition-transform transform hover:scale-105 ${
                         btnIndex === 0
                           ? "bg-[#222549]"
-                          : "bg-[da3654#]"
-                          // rgba(216,34,68,0.85)
+                          : "bg-[#da3654]"
                       }`}
                     >
                       {btnText}
