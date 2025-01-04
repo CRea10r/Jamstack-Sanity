@@ -1,5 +1,5 @@
-import { BlogSection } from "@/app/sanity/types/sectionTypes/blogSection";
-import { urlFor } from "@/app/utils/imageUtils";
+import { BlogSection } from "@/sanity/types/sectionTypes/blogSection";
+import { urlFor } from "@/utils/imageUtils";
 import Image from "next/image";
 
 export default function Blogs({ data }: { data: { sectionContent: BlogSection[] } }) {

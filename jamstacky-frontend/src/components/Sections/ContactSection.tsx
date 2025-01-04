@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { ContactSection } from "@/app/sanity/types/sectionTypes/contactSection";
-import { urlFor } from "@/app/utils/imageUtils";
+import { ContactSection } from "@/sanity/types/sectionTypes/contactSection";
+import { urlFor } from "@/utils/imageUtils";
 import Link from "next/link";
 
 export default function Contact({ data }: { data: { sectionContent: ContactSection[] } }) {

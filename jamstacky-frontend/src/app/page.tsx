@@ -1,26 +1,27 @@
 import dynamic from "next/dynamic";
-import { client } from "./sanity/lib/sanityClient";
-import { PAGE_QUERY } from "./sanity/sanityQueries/pageQueries";
-import { Section } from "./sanity/types/pageType";
-import { HeroSection as Hero } from "./sanity/types/sectionTypes/heroSection";
-import { CaseStudySection as CaseStudy } from "./sanity/types/sectionTypes/caseStudySection";
-import { TechnologySection as Technology } from "./sanity/types/sectionTypes/technologySection";
-import { CompareSection as Compare } from "./sanity/types/sectionTypes/compareSection";
-import { EdgeCaseSection as EdgeCase } from "./sanity/types/sectionTypes/edgeCaseSection";
-import { TestimonialSection as Testimonial } from "./sanity/types/sectionTypes/customerReviewSection";
-import { BlogSection as Blog } from "./sanity/types/sectionTypes/blogSection";
-import { SliderSection as Slider } from "./sanity/types/sectionTypes/sliderSection";
-import { ContactSection as Contact } from "./sanity/types/sectionTypes/contactSection";
+import { client } from "../sanity/lib/sanityClient";
+import { PAGE_QUERY } from "../sanity/sanityQueries/pageQueries";
+import { Section } from "../sanity/types/pageType";
+import { HeroSection as Hero } from "../sanity/types/sectionTypes/heroSection";
+import { CaseStudySection as CaseStudy } from "../sanity/types/sectionTypes/caseStudySection";
+import { TechnologySection as Technology } from "../sanity/types/sectionTypes/technologySection";
+import { CompareSection as Compare } from "../sanity/types/sectionTypes/compareSection";
+import { EdgeCaseSection as EdgeCase } from "../sanity/types/sectionTypes/edgeCaseSection";
+import { TestimonialSection as Testimonial } from "../sanity/types/sectionTypes/customerReviewSection";
+import { BlogSection as Blog } from "../sanity/types/sectionTypes/blogSection";
+import { SliderSection as Slider } from "../sanity/types/sectionTypes/sliderSection";
+import { ContactSection as Contact } from "../sanity/types/sectionTypes/contactSection";
+import HeroSection from "../components/Sections/HeroSection";
 
-const HeroSection = dynamic(() => import("./Components/Sections/HeroSection"));
-const CaseStudySection = dynamic(() => import("./Components/Sections/CaseStudySection"));
-const TechnologySection = dynamic(() => import("./Components/Sections/TechnologySection"));
-const CompareSection = dynamic(() => import("./Components/Sections/CompareSection"));
-const EdgeCaseSection = dynamic(() => import("./Components/Sections/EdgeCaseSection"));
-const TestimonialSection = dynamic(() => import("./Components/Sections/TestimonialSection"));
-const BlogSection = dynamic(() => import("./Components/Sections/BlogSection"));
-const SliderSection = dynamic(() => import("./Components/Sections/SliderSection"));
-const ContactSection = dynamic(() => import("./Components/Sections/ContactSection"));
+
+const CaseStudySection = dynamic(() => import("../components/Sections/CaseStudySection"));
+const TechnologySection = dynamic(() => import("../components/Sections/TechnologySection"));
+const CompareSection = dynamic(() => import("../components/Sections/CompareSection"));
+const EdgeCaseSection = dynamic(() => import("../components/Sections/EdgeCaseSection"));
+const TestimonialSection = dynamic(() => import("../components/Sections/TestimonialSection"));
+const BlogSection = dynamic(() => import("../components/Sections/BlogSection"));
+const SliderSection = dynamic(() => import("../components/Sections/SliderSection"));
+const ContactSection = dynamic(() => import("../components/Sections/ContactSection"));
 
 export default async function Home() {
   const homePage = await client.fetch(PAGE_QUERY, { slug: 'home' });

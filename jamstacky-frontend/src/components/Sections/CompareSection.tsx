@@ -1,5 +1,5 @@
 "use client"
-import { CompareSection } from '@/app/sanity/types/sectionTypes/compareSection';
+import { CompareSection } from '@/sanity/types/sectionTypes/compareSection';
 import { useState } from 'react';
 
 export default function Compare({ data }: { data: { sectionContent: CompareSection[] } }) {

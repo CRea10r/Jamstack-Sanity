@@ -10,8 +10,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useRef } from "react";
-import { urlFor } from "@/app/utils/imageUtils";
-import { TestimonialSection } from "@/app/sanity/types/sectionTypes/customerReviewSection";
+import { urlFor } from "@/utils/imageUtils";
+import { TestimonialSection } from "@/sanity/types/sectionTypes/customerReviewSection";
 import { PortableText } from "@portabletext/react";
 import { customComponents } from "../CustomComponent";
 

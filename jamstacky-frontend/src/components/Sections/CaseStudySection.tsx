@@ -1,8 +1,8 @@
 import { PortableText } from '@portabletext/react';
-import { customComponents } from '@/app/Components/CustomComponent';
+import { customComponents } from '@/components/CustomComponent';
 import Image from 'next/image';
-import { CaseStudySection } from '@/app/sanity/types/sectionTypes/caseStudySection';
-import { urlFor } from '@/app/utils/imageUtils';
+import { CaseStudySection } from '@/sanity/types/sectionTypes/caseStudySection';
+import { urlFor } from '@/utils/imageUtils';
 
 export default function CaseStudy({ data }: { data: { sectionContent: CaseStudySection[] } }) {
   return (

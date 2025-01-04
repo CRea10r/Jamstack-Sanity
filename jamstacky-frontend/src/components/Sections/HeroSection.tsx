@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { HeroSection as HeroSectionType } from "@/app/sanity/types/sectionTypes/heroSection";
-import { urlFor } from "@/app/utils/imageUtils";
+import { HeroSection as HeroSectionType } from "@/sanity/types/sectionTypes/heroSection";
+import { urlFor } from "@/utils/imageUtils";
 
 interface HeroProps {
   data: { sectionContent: HeroSectionType[] };

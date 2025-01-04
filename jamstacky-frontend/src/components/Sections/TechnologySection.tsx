@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image';
-import { TechnologySection } from '@/app/sanity/types/sectionTypes/technologySection';
-import { urlFor } from '@/app/utils/imageUtils';
+import { TechnologySection } from '@/sanity/types/sectionTypes/technologySection';
+import { urlFor } from '@/utils/imageUtils';
 
 export default function Technology({ data }: { data: { sectionContent: TechnologySection[] } }) {
   return (

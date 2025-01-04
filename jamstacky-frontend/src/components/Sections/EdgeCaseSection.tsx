@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { PortableText } from '@portabletext/react';
-import { customComponents } from '@/app/Components/CustomComponent';
-import { EdgeCaseSection } from '@/app/sanity/types/sectionTypes/edgeCaseSection';
+import { customComponents } from '@/components/CustomComponent';
+import { EdgeCaseSection } from '@/sanity/types/sectionTypes/edgeCaseSection';
 import Link from 'next/link';
-import { urlFor } from '@/app/utils/imageUtils';
+import { urlFor } from '@/utils/imageUtils';
 
 export default function EdgeCase({ data }: { data: { sectionContent: EdgeCaseSection[] } }) {
   return (

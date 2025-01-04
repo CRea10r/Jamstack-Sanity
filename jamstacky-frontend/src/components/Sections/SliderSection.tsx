@@ -1,7 +1,7 @@
 "use client"
-import { SliderSection } from '@/app/sanity/types/sectionTypes/sliderSection';
+import { SliderSection } from '@/sanity/types/sectionTypes/sliderSection';
 import Image from 'next/image';
-import { urlFor } from '@/app/utils/imageUtils'
+import { urlFor } from '@/utils/imageUtils'
 import '@/app/globals.css'
 
 export default function InfiniteSlider({ data }: { data: { sectionContent: SliderSection[] } }) {
