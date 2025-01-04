@@ -44,7 +44,8 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                       className={`rounded-full px-6 py-3 text-lg md:text-xl font-semibold text-white transition-transform transform hover:scale-105 ${
                         btnIndex === 0
                           ? "bg-[#222549]"
-                          : "bg-[rgba(216,34,68,0.85)]"
+                          : "bg-[da3654#]"
+                          // rgba(216,34,68,0.85)
                       }`}
                     >
                       {btnText}
