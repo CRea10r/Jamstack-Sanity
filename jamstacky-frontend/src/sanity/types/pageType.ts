@@ -6,7 +6,6 @@ import { HeroSection } from "./sectionTypes/heroSection";
 import { TechnologySection } from "./sectionTypes/technologySection";
 import { BlogSection } from "./sectionTypes/blogSection";
 import { SliderSection } from "./sectionTypes/sliderSection";
-import { ContactSection } from "./sectionTypes/contactSection";
 
 export interface MarkDef {
   _key: string;
@@ -27,9 +26,9 @@ export interface content {
 }
 
 export interface Section {
-  type: "heroSection" | "caseStudySection" | "technologySection" | "compareSection" | "edgeCaseSection" | "testimonialSection" | "blogSection" | "sliderSection" | "contactSection";
+  type: "heroSection" | "caseStudySection" | "technologySection" | "compareSection" | "edgeCaseSection" | "testimonialSection" | "blogSection" | "sliderSection";
   title: string;
-  sectionContent?: HeroSection[] | CaseStudySection[] | TechnologySection[] | CompareSection[] | EdgeCaseSection[] | TestimonialSection[] | BlogSection [] | SliderSection[] | ContactSection[];
+  sectionContent?: HeroSection[] | CaseStudySection[] | TechnologySection[] | CompareSection[] | EdgeCaseSection[] | TestimonialSection[] | BlogSection [] | SliderSection[];
 }
 
 export interface Page {

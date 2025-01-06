@@ -1,15 +1,28 @@
+import { content } from "./pageType";
+
 export interface FooterData {
-    footerLogo: {
-      asset: {
-        _id: string;
-        url: string;
-      };
+  contactTitle: string;
+  contactDescription: content[];
+  contactAvatar: {
+    asset: {
+      _id: string;
+      url: string;
     };
-    footerItems: FooterItem[];
-    footerEmail: string;
-    footerCopyright: string;
-  }
-  
+  };
+  contactButtonText: string;
+  contactText: string;
+  contactEmail: string;
+  footerLogo: {
+    asset: {
+      _id: string;
+      url: string;
+    };
+  };
+  footerItems: FooterItem[];
+  footerEmail: string;
+  footerCopyright: string;
+}
+
 export interface FooterItem {
-    label: string;
-  }
+  label: string;
+}

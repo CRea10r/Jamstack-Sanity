@@ -30,8 +30,8 @@ export default function Blogs({ data }: { data: { sectionContent: BlogSection[] 
                                     />
                                 )}
                                 <div className="p-6">
-                                    <h3 className="text-xl font-bold text-gray-800 mb-2">{content.contentName}</h3>
-                                    <p className="text-gray-600 text-base mb-4">{content.contentContext}</p>
+                                    <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">{content.contentName}</h3>
+                                    <p className="text-gray-600 text-base md:text-xl mb-4">{content.contentContext}</p>
                                    
                                     {content.contentButtonText?.map((buttonText, btnIndex) => (
                                         <button
@@ -47,7 +47,7 @@ export default function Blogs({ data }: { data: { sectionContent: BlogSection[] 
                     </div>
                    
                     {blogSection.buttonText && (
-                        <button className="mt-8 bg-[#da3654] text-white py-2 px-4 hover:bg-[#222549] rounded-full">{blogSection.buttonText}
+                        <button className="mt-8 text-lg md:text-xl font-semibold bg-[#da3654] text-white py-2 px-4 hover:bg-[#222549] rounded-full">{blogSection.buttonText}
                         </button>
                     )}
                 </div>

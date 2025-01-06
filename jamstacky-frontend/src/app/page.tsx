@@ -10,7 +10,6 @@ import { EdgeCaseSection as EdgeCase } from "../sanity/types/sectionTypes/edgeCa
 import { TestimonialSection as Testimonial } from "../sanity/types/sectionTypes/customerReviewSection";
 import { BlogSection as Blog } from "../sanity/types/sectionTypes/blogSection";
 import { SliderSection as Slider } from "../sanity/types/sectionTypes/sliderSection";
-import { ContactSection as Contact } from "../sanity/types/sectionTypes/contactSection";
 import HeroSection from "../components/Sections/HeroSection";
 
 
@@ -21,7 +20,6 @@ const EdgeCaseSection = dynamic(() => import("../components/Sections/EdgeCaseSec
 const TestimonialSection = dynamic(() => import("../components/Sections/TestimonialSection"));
 const BlogSection = dynamic(() => import("../components/Sections/BlogSection"));
 const SliderSection = dynamic(() => import("../components/Sections/SliderSection"));
-const ContactSection = dynamic(() => import("../components/Sections/ContactSection"));
 
 export default async function Home() {
   const homePage = await client.fetch(PAGE_QUERY, { slug: 'home' });
@@ -45,8 +43,6 @@ export default async function Home() {
             return <BlogSection key={sectionIndex} data={sectionItem as { sectionContent: Blog[] }} />;
           case "sliderSection":
             return <SliderSection key={sectionIndex} data={sectionItem as { sectionContent: Slider[] }} />;
-          case "contactSection":
-            return <ContactSection key={sectionIndex} data={sectionItem as { sectionContent: Contact[] }} />;
           default:
             console.warn(`Unknown section type: ${sectionItem.type}`);
             return null;

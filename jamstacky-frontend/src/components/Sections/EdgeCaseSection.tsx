@@ -62,7 +62,7 @@ export default function EdgeCase({ data }: { data: { sectionContent: EdgeCaseSec
               <div className="mt-8">
                 <Link
                   href="#"
-                  className="inline-block bg-[#da3654] text-white py-2 px-4 rounded-full hover:bg-[#222549]"
+                  className="inline-block text-lg md:text-xl font-semibold bg-[#da3654] text-white py-2 px-4 rounded-full hover:bg-[#222549]"
                 >
                   {edgeCase?.buttonText}
                 </Link>
