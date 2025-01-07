@@ -5,13 +5,13 @@ import { urlFor } from '@/utils/imageUtils';
 
 export default function Technology({ data }: { data: { sectionContent: TechnologySection[] } }) {
   return (
-    <div className="py-4 px-2 sm:px-6 lg:px-[15%]">
+    <div className="py-4 px-2 sm:px-6 lg:px-[15%] bg-custom-gradient">
 
       {data.sectionContent?.map((technologySection, index) => (
         <div key={index} className="mb-12">
           
           {technologySection.sectionHeading && (
-            <h1 className="text-lg md:text-xl font-semibold text-blue-600 mb-2">--{technologySection.sectionHeading}--</h1>
+            <h1 className="text-lg md:text-xl font-semibold text-[#4a3aff] mb-2">--{technologySection.sectionHeading}--</h1>
           )}
           {technologySection?.fieldContent?.fieldName && (
             <h1 className="text-3xl font-medium mb-8">{technologySection.fieldContent.fieldName}</h1>

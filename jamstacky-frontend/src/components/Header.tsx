@@ -16,21 +16,20 @@ export default async function Header() {
   const headerData: HeaderData = await client.fetch(HEADER_QUERY);
 
   return (
-    <header className="py-4">
-      <div className="py-4 px-2 sm:px-6 lg:px-[15%] flex justify-between items-center">
-        {/* Logo Section */}
+    <header>
+      <div className="py-4 px-2 sm:px-6 lg:px-[15%] flex justify-between items-center bg-custom-gradient">
+
         <Link href="/">
           <Image
             width={200}
-            height={50} // Adjusted height for a consistent aspect ratio
+            height={50} 
             src={headerData.logoImage?.asset?.url || '/logo.svg'}
             alt="Jamstacky Logo"
-            layout="intrinsic" // Helps with responsive image handling and avoids layout shifts
-            priority // Make sure the logo image is loaded as soon as possible
+            layout="intrinsic"
+            priority 
           />
         </Link>
-
-        {/* Desktop Navigation */}
+  
         <div className="hidden md:flex items-center gap-4 py-5">
           {headerData.navigationItems?.map((item, index) => (
             <Link key={index} href={item.link} className="text-gray-600 hover:text-gray-800 text-lg">
@@ -42,7 +41,6 @@ export default async function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu - Sheet */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
@@ -57,7 +55,7 @@ export default async function Header() {
               </SheetHeader>
               <nav className="flex flex-col gap-2">
                 {headerData.navigationItems?.map((item, index) => (
-                  <Link key={index} href={item.link} className="text-gray-600 hover:text-gray-800 text-lg">
+                  <Link key={index} href={`/${item.link}`}  className="text-gray-600 hover:text-gray-800 text-lg">
                     {item.label}
                   </Link>
                 ))}

@@ -46,11 +46,27 @@ export const PAGE_QUERY = defineQuery(`
           _type,
           title,
           description,
+          tableContent,
           content[] {
             contentName,
             contentContext,
-            dropDownList,
-            buttonText
+            buttonText,
+            dropDownList[] {
+              dropDownItemName,
+              dropDownItemNameSlug,
+              dropDownItemContext,
+              dropDownItemImage {
+                asset->{
+                  _id,
+                  url
+                }
+              },
+              dropDownItemFeatures,
+              tableContentField[] {
+                fieldName,
+                fieldValue
+              }
+            }
           }
         },
         _type == "edgeCaseSection" => {
@@ -99,20 +115,6 @@ export const PAGE_QUERY = defineQuery(`
               url
             }
           }
-        },
-        _type == "contactSection" => {
-          _type,
-          title,
-          description,
-          contactAvtar {
-            asset->{
-              _id,
-              url
-            }
-          },
-          buttonText,
-          contactText,
-          contactEmail
         }
       }
     }

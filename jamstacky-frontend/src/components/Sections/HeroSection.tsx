@@ -9,7 +9,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ data }) => {
   if (!data.sectionContent || data.sectionContent.length === 0) {
-    return null; // Fallback if no content exists
+    return null; 
   }
 
   return (
@@ -17,8 +17,8 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
       {data.sectionContent.map((heroSection, index) => (
         <div
           key={index}
-          className="py-8 px-2 sm:px-6 lg:px-[15%] flex items-center justify-center"
-          style={{ minHeight: "400px" }} // Reserve height to avoid layout shifts
+          className="py-8 px-2 sm:px-6 lg:px-[15%] flex items-center justify-center bg-custom-gradient"
+          style={{ minHeight: "400px" }}
         >
           {/* Text Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
@@ -58,14 +58,14 @@ const Hero: React.FC<HeroProps> = ({ data }) => {
                   <Image
                     src={urlFor(heroSection.heroImage.asset)}
                     alt={heroSection?.title || "Hero Section Image"}
-                    width={640} // Explicit width to avoid layout shifts
-                    height={658} // Explicit height to avoid layout shifts
-                    layout="intrinsic" // Ensures proper aspect ratio
-                    priority // Ensures image is loaded early
-                    loading="eager" // Eager loading for critical images
+                    width={640} 
+                    height={658} 
+                    layout="intrinsic" 
+                    priority 
+                    loading="eager" 
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                    placeholder="blur" // Placeholder while loading
-                    blurDataURL="data:image/png;base64,..." // Placeholder image
+                    placeholder="blur"
+                    blurDataURL="data:image/png;base64,..."
                   />
                 </div>
               </div>

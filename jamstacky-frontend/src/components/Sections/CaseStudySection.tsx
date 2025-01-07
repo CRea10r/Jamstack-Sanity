@@ -10,7 +10,7 @@ export default function CaseStudy({ data }: { data: { sectionContent: CaseStudyS
       {data.sectionContent?.map((caseStudySection, index) => (
         <div key={index}>
           {caseStudySection.sectionHeading && (
-            <h1 className="text-lg md:text-xl font-semibold text-blue-600 mb-2">--{caseStudySection.sectionHeading}--</h1>
+            <h1 className="text-lg md:text-xl font-semibold text-[#4a3aff] mb-2">--{caseStudySection.sectionHeading}--</h1>
           )}
 
           {caseStudySection?.title && (

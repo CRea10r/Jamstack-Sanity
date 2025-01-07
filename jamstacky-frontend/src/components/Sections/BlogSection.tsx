@@ -31,7 +31,7 @@ export default function Blogs({ data }: { data: { sectionContent: BlogSection[] 
                                 )}
                                 <div className="p-6">
                                     <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-2">{content.contentName}</h3>
-                                    <p className="text-gray-600 text-base md:text-xl mb-4">{content.contentContext}</p>
+                                    <p className="text-[#646680] text-base md:text-xl mb-4">{content.contentContext}</p>
                                    
                                     {content.contentButtonText?.map((buttonText, btnIndex) => (
                                         <button

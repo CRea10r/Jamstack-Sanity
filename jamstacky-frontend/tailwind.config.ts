@@ -61,6 +61,8 @@ export default {
   		},
 		backgroundImage: {
 			'custom-gradient': 'linear-gradient(56.32deg, rgba(74, 58, 255, .2) -19.89%, rgba(74, 58, 255, 0) 32.85%), linear-gradient(111.02deg, #f4fbff 24.12%, #f3dee5 101.68%)',
+			'compare-custom-gradient': 'linear-gradient(86.13deg, #222549 29.54%, #da3654 150.39%)',
+
 		},
   	}
   },

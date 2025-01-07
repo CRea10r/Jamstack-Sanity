@@ -1,22 +1,37 @@
 "use client"
 import { CompareSection } from '@/sanity/types/sectionTypes/compareSection';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import slugify from 'slugify';
 
 export default function Compare({ data }: { data: { sectionContent: CompareSection[] } }) {
-  const [cmsSelected, setCmsSelected] = useState('');
-  const [ssgSelected, setSsgSelected] = useState('');
-  const [deploymentSelected, setDeploymentSelected] = useState('');
+  const router = useRouter();
 
-  const handleCmsChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setCmsSelected(event.target.value);
+  const [selectedOptions, setSelectedOptions] = useState<{ [key: string]: { first: string, second: string } }>({});
+
+  const handleSelectionChange = (contentName: string, type: 'first' | 'second', value: string) => {
+    setSelectedOptions((prevState) => ({
+      ...prevState,
+      [contentName]: {
+        ...prevState[contentName],
+        [type]: value,
+      },
+    }));
   };
 
-  const handleSsgChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSsgSelected(event.target.value);
-  };
-
-  const handleDeploymentChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setDeploymentSelected(event.target.value);
+  const handleCompareClick = (contentName: string) => {
+    const { first, second } = selectedOptions[contentName] || {};
+    
+    if (first && second) {
+       
+      const formattedFirst = slugify(first, { lower: true, strict: true }); 
+      const formattedSecond = slugify(second, { lower: true, strict: true });
+      const slug = `${formattedFirst}-vs-${formattedSecond}`;
+      console.log('Selected Slug:', slug);
+      router.push(`/comparison/${slug}`);
+    } else {
+      alert('Please select both options before comparing.');
+    }
   };
 
   return (
@@ -34,81 +49,54 @@ export default function Compare({ data }: { data: { sectionContent: CompareSecti
                 <h3 className="text-xl font-bold mb-2 text-[#da3654]">{content.contentName}</h3>
 
                 <div className="flex flex-col sm:flex-row sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                  {/* Content Description */}
+                  
                   <div className="sm:w-1/4">
                     <p className="text-gray-700">{content.contentContext}</p>
                   </div>
 
-                  {/* CMS Select */}
                   <div className="sm:w-1/4">
                     <select
-                      aria-label={`Select ${content.contentName}`} // Descriptive label for screen readers
+                      aria-label={`Select ${content.contentName}`}
                       className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 focus:outline-none"
-                      value={
-                        content.contentName === "CMS"
-                          ? cmsSelected
-                          : content.contentName === "Static Site Generators(SSGs)"
-                            ? ssgSelected
-                            : deploymentSelected
-                      }
-                      onChange={
-                        content.contentName === "CMS"
-                          ? handleCmsChange
-                          : content.contentName === "Static Site Generators(SSGs)"
-                            ? handleSsgChange
-                            : handleDeploymentChange
-                      }
+                      value={selectedOptions[content.contentName]?.first || ''}
+                      onChange={(e) => handleSelectionChange(content.contentName, 'first', e.target.value)}
                     >
                       <option value="">Select {content.contentName}</option>
-                      {content.dropDownList?.map((option: string, optionIdx: number) => (
-                        <option key={optionIdx} value={option}>
-                          {option}
+                      {content.dropDownList?.map((item, optionIdx) => (
+                        <option key={optionIdx} value={item.dropDownItemName}>
+                          {item.dropDownItemName}
                         </option>
                       ))}
                     </select>
                   </div>
-
-                  {/* VS Label */}
+              
                   <div className="sm:w-1/4 text-center text-lg font-semibold text-[#da3654]">
                     VS
                   </div>
 
-                  {/* Second Select */}
                   <div className="sm:w-1/4">
                     <select
-                      aria-label={`Select ${content.contentName}`} // Descriptive label for screen readers
+                      aria-label={`Select ${content.contentName}`}
                       className="w-full px-4 py-2 rounded-md border border-gray-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 focus:outline-none"
-                      value={
-                        content.contentName === "CMS"
-                          ? cmsSelected
-                          : content.contentName === "Static Site Generators(SSGs)"
-                            ? ssgSelected
-                            : deploymentSelected
-                      }
-                      onChange={
-                        content.contentName === "CMS"
-                          ? handleCmsChange
-                          : content.contentName === "Static Site Generators(SSGs)"
-                            ? handleSsgChange
-                            : handleDeploymentChange
-                      }
+                      value={selectedOptions[content.contentName]?.second || ''}
+                      onChange={(e) => handleSelectionChange(content.contentName, 'second', e.target.value)}
                     >
                       <option value="">Select {content.contentName}</option>
-                      {content.dropDownList?.map((option: string, optionIdx: number) => (
-                        <option key={optionIdx} value={option}>
-                          {option}
+                      {content.dropDownList?.map((item, optionIdx) => (
+                        <option key={optionIdx} value={item.dropDownItemName}>
+                          {item.dropDownItemName}
                         </option>
                       ))}
                     </select>
                   </div>
 
-                  {/* Compare Button */}
                   <div className="sm:w-1/4 flex justify-center">
-                    <button className="w-full sm:w-auto bg-[#222549] text-white py-2 px-4 rounded-md hover:bg-[#da3654]">
-                      {content?.buttonText || 'Compare'}
+                    <button onClick={() => handleCompareClick(content.contentName)} className="w-full sm:w-auto bg-[#222549] text-white py-2 px-4 rounded-md hover:bg-[#da3654]">
+                      {content?.buttonText}
                     </button>
                   </div>
                 </div>
+
               </div>
             ))}
           </div>

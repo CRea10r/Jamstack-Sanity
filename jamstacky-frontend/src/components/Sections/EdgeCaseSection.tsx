@@ -12,7 +12,7 @@ export default function EdgeCase({ data }: { data: { sectionContent: EdgeCaseSec
         <div key={index} className="relative">
 
           {edgeCase.sectionHeading && (
-            <h1 className="-top-10 left-0 text-lg md:text-xl font-semibold text-blue-600 mb-2">
+            <h1 className="-top-10 left-0 text-lg md:text-xl font-semibold text-[#4a3aff] mb-2">
               --{edgeCase.sectionHeading}--
             </h1>
           )}
@@ -44,7 +44,9 @@ export default function EdgeCase({ data }: { data: { sectionContent: EdgeCaseSec
             <div className="w-full md:w-1/2 px-4 text-center md:text-left">
               <div className="mt-8">
                 {edgeCase?.content && (
-                  <PortableText value={edgeCase.content} components={customComponents} />
+                  <div className='[&>p]:text-[#646680]'>
+                    <PortableText value={edgeCase.content} components={customComponents} />
+                  </div>
                 )}
               </div>
 
